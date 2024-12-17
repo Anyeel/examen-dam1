@@ -61,7 +61,11 @@ elemento.addEventListener("detontante", función);
 ```
 
 8. ¿Como se añade una libreria externa a un proyecto de JavaScript? Puedes usar p5 como referencia.
-En el head de nuestro html podemos indicar: "<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/addons/p5.sound.min.js"></script>" Lo que hará que incluyamos las funciones de esa libreria a nuestro proyecto de p5.
+En el head de nuestro html podemos indicar: 
+```html
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.10.0/addons/p5.sound.min.js"></script>
+ ```
+Lo que hará que incluyamos las funciones de esa libreria a nuestro proyecto de p5.
 
 9. ¿Que es esto? `<meta charset="UTF-8">` ¿Por qué es importante?
 Esto aparece en los HTML, son metadatos, los cuales son importantes para el funcionamiento de la página, estos pueden variar según de donde nos conectemos.

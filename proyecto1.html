@@ -1,12 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P1</title>
 </head>
 <body>
-    <p></p>
-    <button>+</button>
-    <button>-</button>
+    <p>Puntos</p>
+    <p id="marcadorPuntos">0</p>
+    <button id="botonSumar">+</button> 
+    <button id="botonRestar">-</button>
+    <script>
+        const botonmas = document.querySelector("#botonSumar") //Seleccionamos el boton de sumar y lo guardamos en la variable.
+        const botonmenos = document.querySelector("#botonRestar") //Lo mismo para el boton de restar.
+        const marcadorPuntos = document.getElementById("marcadorPuntos") //Lo mismo para el marcador de puntos.
+        let puntos = localStorage.getItem('puntos')
+        
+        function actualizarColor(){ //Funcion para cambiar el color según el valor de los puntos.
+            if (puntos < 5){ //Los ifs y else sirven para elegir el color.
+                marcadorPuntos.style.color = 'green';
+            }
+            else if (puntos > 7){
+                marcadorPuntos.style.color = 'red';
+            }
+            else {
+                marcadorPuntos.style.color = 'yellow';
+            }
+            marcadorPuntos.innerText = puntos //Esto sirve para actualizar el color y el valor de puntos.
+        }
+        if (!puntos){ //Comprobación necesaria si no hay puntos (solución de bugs).
+            puntos = 0
+        }
+        marcadorPuntos.innerText = puntos //Actualizamos los puntos (solución de bugs).
+        function sumarPuntos() { //Esta funcion nos suma puntos a la variable de puntos.
+            if (puntos <= 9) //Solo si los puntos llegan hasta 9, para que el valor maximo sea 10.
+            {
+                puntos++
+                localStorage.setItem('puntos', puntos) //Guardamos la información localmente.
+                actualizarColor() //Llamamos al cambio de color.
+            }
+        }
+        function restarPuntos() { //Igual que sumar, pero con la resta.
+            if (puntos >= 1) //Solo cuando son mayores que 1, para que no reste a menos de 0.
+            {
+                puntos--
+                localStorage.setItem('puntos', puntos)
+                actualizarColor()
+            }
+        }
+        botonmas.addEventListener("click", sumarPuntos) //Eventos tanto de suma como de resta para cada vez que se da click.
+        botonmenos.addEventListener("click", restarPuntos)
+    </script>
 </body>
 </html>
