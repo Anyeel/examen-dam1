@@ -45,7 +45,7 @@ Por último, haz una petición `POST` a la ruta `/login` con los datos del usuar
 }
 ```
 
-La bandera está detrás del login.
+La bandera está detrás del login. APIKEY: G37BU5Y
 
 ## Ejercicio 5: Alquimia
 
