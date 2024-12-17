@@ -6,9 +6,120 @@
     <title>P2</title>
 </head>
 <body>
-    <p></p>
-    <input type="range" min="0" max="100">
-    <p></p>
-    <input type="range" min="0" max="100">    
+    <p id="marcador1"></p>
+    <input type="range" min="0" max="100" id="input1">
+    <p id="marcador2"></p>
+    <input type="range" min="0" max="100" id="input2">    
+
+    <p>Suma:</p>
+    <p id="marcadorSuma">0</p>
+
+    <p>Resta:</p>
+    <p id="marcadorResta">0</p>
+
+    <p>Multiplicación:</p>
+    <p id="marcadorMultiplicacion">0</p>
+    
+    <p>División:</p>
+    <p id="marcadorDivision">0</p>
+
+    <p>Módulo:</p>
+    <p id="marcadorModulo">0</p>
+
+    <p>Exponente:</p>
+    <p id="marcadorExponente">0</p>
+
+    <p>Incremento:</p>
+    <button id="incrementar1">Incrementar Input1</button>
+    <button id="incrementar2">Incrementar Input2</button>
+
+    <p>Decremento:</p>
+    <button id="decrementar1">Decrementar Input1</button>
+    <button id="decrementar2">Decrementar Input2</button>
+
+    <script>
+        const p1 = document.querySelector("#marcador1")
+        const p2 = document.querySelector("#marcador2")
+        const marcadorSuma = document.getElementById("marcadorSuma")
+        const marcadorResta = document.getElementById("marcadorResta")
+        const marcadorMultiplicacion = document.getElementById("marcadorMultiplicacion")
+        const marcadorDivision = document.getElementById("marcadorDivision")
+        const marcadorModulo = document.getElementById("marcadorModulo")
+        const marcadorExponente = document.getElementById("marcadorExponente")
+        const input1 = document.querySelector("#input1")
+        const input2 = document.querySelector("#input2")
+        
+        const btnIncrementar1 = document.getElementById("incrementar1")
+        const btnIncrementar2 = document.getElementById("incrementar2")
+        const btnDecrementar1 = document.getElementById("decrementar1")
+        const btnDecrementar2 = document.getElementById("decrementar2")
+
+        function actualizarMarcador(){
+            p1.innerText = input1.value
+            p2.innerText = input2.value
+            suma()
+            resta()
+            multiplicacion()
+            division()
+            modulo()
+            exponente()
+        }
+
+        function suma(){
+            let suma = parseInt(input1.value) + parseInt(input2.value)
+            marcadorSuma.innerText = suma
+        }
+
+        function resta(){
+            let resta = parseInt(input1.value) - parseInt(input2.value)
+            marcadorResta.innerText = resta
+        }
+
+        function multiplicacion(){
+            let multiplicacion = parseInt(input1.value) * parseInt(input2.value)
+            marcadorMultiplicacion.innerText = multiplicacion
+        }
+
+        function division(){
+            let division = parseInt(input1.value) / parseInt(input2.value)
+            marcadorDivision.innerText = division
+        }
+
+        function modulo(){
+            let modulo = parseInt(input1.value) % parseInt(input2.value)
+            marcadorModulo.innerText = modulo
+        }
+
+        function exponente(){
+            let exponente = Math.pow(parseInt(input1.value), parseInt(input2.value))
+            marcadorExponente.innerText = exponente
+        }
+
+        // Incremento y Decremento
+        btnIncrementar1.addEventListener("click", () => {
+            input1.value = parseInt(input1.value) + 1
+            actualizarMarcador()
+        })
+
+        btnIncrementar2.addEventListener("click", () => {
+            input2.value = parseInt(input2.value) + 1
+            actualizarMarcador()
+        })
+
+        btnDecrementar1.addEventListener("click", () => {
+            input1.value = parseInt(input1.value) - 1
+            actualizarMarcador()
+        })
+
+        btnDecrementar2.addEventListener("click", () => {
+            input2.value = parseInt(input2.value) - 1
+            actualizarMarcador()
+        })
+
+        input1.addEventListener("input", actualizarMarcador)
+        input2.addEventListener("input", actualizarMarcador)
+
+        actualizarMarcador()
+    </script>
 </body>
 </html>
