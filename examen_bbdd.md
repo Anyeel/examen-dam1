@@ -1,5 +1,9 @@
 # Examen 1er trimestre DAM
 
+## IP
+
+IP: 192.168.60.211
+
 ## Instrucciones
 
 En este examen tendrás que realizar una serie de peticiones `HTTP` a un servidor con el fin de capturar banderas.
