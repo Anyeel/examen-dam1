@@ -1,10 +1,5 @@
 # Examen 1er trimestre DAM
 
-## Alumno
-
-Nombre:
-Correo:
-
 ## Instrucciones
 
 En este examen tendrás que realizar una serie de peticiones `HTTP` a un servidor con el fin de capturar banderas.

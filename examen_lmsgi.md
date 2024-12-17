@@ -1,10 +1,5 @@
 # Examen LMSGI 1er trimestre
 
-## Alumno
-
-Nombre:
-Correo:
-
 ## Instrucciones
 
 Este examen se centra en los aspectos más basicos de HTML, CSS y JavaScript, poniendo el foco en la manipulación del DOM.
